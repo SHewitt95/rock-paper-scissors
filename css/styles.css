@@ -1,0 +1,79 @@
+body {
+  font-family: sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  width: 90%;
+  display: block;
+  margin: 1em auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+}
+
+#rock {
+  font-weight: bold;
+}
+
+#paper {
+  font-style: italic;
+}
+
+.game-box {
+  width: 50%;
+  display: block;
+  margin: 1em auto;
+  background-color: yellow;
+}
+
+.row1, .row2 {
+  width: 100%;
+  padding: 1em;
+}
+
+.player-card-caption {
+  text-align: center;
+}
+
+.game-card {
+  display: inline-block;
+  margin: 1em;
+  width: 125px;
+  height: 175px;
+  position: relative;
+  left: 2.25em;
+  background-color: black;
+}
+
+.card-with-caption {
+  width: 25%;
+  display: inline-block;
+  /*background-color: white;*/
+  position: relative;
+  left: 3.25em;
+}
+
+.comp-card {
+  margin: 0em;
+  margin-bottom: 0.5em;
+  display: block;
+  position: relative;
+  left: 0em;
+}
+
+.comp-card-caption {
+  /*text-align: center;*/
+}
+
+.score-box {
+  width: 48%;
+  height: 175px;
+  display: inline-block;
+  background-color: red;
+  position: relative;
+  bottom: 1.3em;
+  left: 3.25em;
+}
