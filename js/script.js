@@ -1,9 +1,25 @@
 "use strict";
 
-var playerChoice,
-    compChoice;
+var player,
+    computer;
 
-function pickChoice() {
+var playerScore,
+    compScore;
+
+// var playerCards = document.getElementsByClassName("player-card");
+var rock = document.getElementById("rock-card"),
+    paper = document.getElementById("paper-card"),
+    scissors = document.getElementById("scissors-card");
+
+console.log(rock);
+console.log(paper);
+console.log(scissors);
+
+function playerChoice() {
+
+}
+
+function compChoice() {
   // Uses Math.random to pick rock, paper or scissors.
   var choice = Math.random();
 
@@ -23,6 +39,3 @@ function pickChoice() {
 
   return choice;
 }
-
-var number = pickChoice();
-console.log(number);
