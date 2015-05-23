@@ -1,0 +1,2 @@
+var playerChoice,
+    compChoice;
