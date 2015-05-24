@@ -1,7 +1,5 @@
 "use strict";
 
-var playerCards = document.getElementsByClassName("player-card");
-
 var playerScore = 0,
     compScore = 0;
 

@@ -45,7 +45,7 @@ h1 {
   height: 175px;
   position: relative;
   left: 2.25em;
-  background-color: black;
+  background: url("../img/dark_embroidery.png");
 }
 
 #rock:hover, #paper:hover, #scissors:hover {
@@ -76,8 +76,17 @@ h1 {
   width: 48%;
   height: 175px;
   display: inline-block;
-  background-color: red;
+  border: 5px solid black;
+  background-color: white;
   position: relative;
-  bottom: 1.3em;
+  bottom: 7em;
   left: 3.25em;
+}
+
+.score p {
+  margin: 1em;
+  padding: 0;
+  display: block;
+  position: relative;
+  top: 2em;
 }
