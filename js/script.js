@@ -1,102 +1,76 @@
 "use strict";
 
-$(document).ready(function() {
-  var player,
-      computer;
+var playerCards = document.getElementsByClassName("player-card");
 
-  var playerScore = 0,
-      compScore = 0;
+var playerScore = 0,
+    compScore = 0;
 
-  var playerCards = document.getElementsByClassName("player-card");
+function game(choice) {
 
-  function game() {
+  function compChoice() {
+    // Uses Math.random to pick rock, paper or scissors.
+    var choice = Math.random();
 
-    function playerChoice() {
-      // Returns user's choice.
-      var choice;
-
-      $(playerCards).click(function() {
-        choice = this.id;
-      });
-
-      return choice;
+    if (choice <= 0.33) {
+      choice = "rock";
+    } else if (choice >= 0.66) {
+      choice = "paper";
+    } else {
+      choice = "scissors";
     }
 
-    function compChoice() {
-      // Uses Math.random to pick rock, paper or scissors.
-      var choice = Math.random();
+    return choice;
+  }
 
-      if (choice <= 0.33) {
-        choice = "rock";
-      } else if (choice >= 0.66) {
-        choice = "paper";
-      } else {
-        choice = "scissors";
-      }
+  var player = choice;
+  var computer = compChoice();
 
-      return choice;
+  // console.log(player);
+  // console.log(computer);
+
+  if (player == "rock") { // First part of "if" block...
+
+    if (computer == "rock") {
+      // Tie! No points given.
+    } else if (computer == "paper") {
+      // Computer gets a point.
+      compScore++;
+    } else {
+      // Player gets a point.
+      playerScore++;
     }
 
-    function updateScore(score) {
-      return score++;
+  } else if (player == "paper") { // Second part of "if" block...
+
+    if (computer == "rock") {
+      // Player gets a point.
+      playerScore++;
+    } else if (computer == "paper") {
+      // Tie! No points given.
+    } else if (computer == "scissors") {
+      // Computer gets a point.
+      compScore++;
     }
 
-    if(playerScore < 5 && compScore < 5) {
+  } else if (player == "scissors") { // Third part of "if" block...
 
-      var playerChoice,
-          compChoice;
-
-      $(playerCards).click(function() {
-        playerChoice = playerChoice();
-        compChoice = compChoice();
-
-        if (playerChoice == "rock") { // First part of "if" block...
-
-          if (compChoice == "rock") {
-            // Tie! No points given.
-          } else if (compChoice == "paper") {
-            // Computer gets a point.
-            updateScore(compScore);
-          } else if (compChoice == "scissors") {
-            // Player gets a point.
-            updateScore(playerScore);
-          }
-
-        } else if (playerChoice == "paper") { // Second part of "if" block...
-
-          if (compChoice == "rock") {
-            // Player gets a point.
-            updateScore(playerScore);
-          } else if (compChoice == "paper") {
-            // Tie! No points given.
-          } else if (compChoice == "scissors") {
-            // Computer gets a point.
-            updateScore(compScore);
-          }
-
-        } else if (playerChoice == "scissors") { // Third part of "if" block...
-
-          if (compChoice == "rock") {
-            // Computer gets a point.
-            updateScore(compScore);
-          } else if (compChoice == "paper") {
-            // Player gets a point.
-            updateScore(playerScore);
-          } else if (compChoice == "scissors") {
-            // Tie! No points given.
-          }
-
-        }
-
-        console.log("Player score: ", playerScore);
-        console.log("Computer score: ", compScore);
-
-      })
-
+    if (computer == "rock") {
+      // Computer gets a point.
+      compScore++;
+    } else if (computer == "paper") {
+      // Player gets a point.
+      playerScore++;
+    } else if (computer == "scissors") {
+      // Tie! No points given.
     }
 
   }
 
-  game();
+  console.log("Player score: ", playerScore);
+  console.log("Comp score: ", compScore);
+}
 
-})
+
+$(".player-card").click(function() {
+  game(this.id.toString());
+});
