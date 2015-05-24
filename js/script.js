@@ -72,5 +72,5 @@ function game(choice) {
 
 
 $(".player-card").click(function() {
-  game(this.id.toString());
+  game(this.id);
 });
