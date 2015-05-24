@@ -3,7 +3,8 @@
 var playerScore = 0,
     compScore = 0;
 
-var playerCards = $(".player-card");
+var playerCards = $(".player-card"),
+    computerCard = $("#comp-card-whole");
 
 function game(choice) {
   // Houses main game functionality.
@@ -66,7 +67,6 @@ function game(choice) {
     }
 
   }
-
   console.log("Player score: ", playerScore);
   console.log("Comp score: ", compScore);
 }
@@ -75,4 +75,11 @@ function game(choice) {
 // Clicking on a card initiates the game.
 playerCards.click(function() {
   game(this.id);
+});
+
+computerCard.flip({
+  axis: 'y',
+  trigger: 'hover',
+  reverse: true,
+  speed: 500
 });
