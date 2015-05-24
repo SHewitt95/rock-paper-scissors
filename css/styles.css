@@ -31,7 +31,7 @@ h1 {
 
 .row1, .row2 {
   width: 100%;
-  padding: 1em;
+  padding: 0.5em;
 }
 
 .player-card-caption {
@@ -51,6 +51,29 @@ h1 {
 
 #rock:hover, #paper:hover, #scissors:hover {
   cursor: pointer;
+}
+
+i {
+  display: block;
+  position: absolute;
+  top: 0.5em;
+  left: 0.15em;
+}
+
+#rock, #paper, #scissors {
+  background: white;
+}
+
+#rock {
+
+}
+
+#paper {
+
+}
+
+#scissors {
+
 }
 
 .card-with-caption {

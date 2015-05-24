@@ -27,8 +27,6 @@ function game(choice) {
   var player = choice;
   var computer = compChoice();
 
-  computerCard.flip(true);
-
   if (player == "rock") { // First part of "if" block...
 
     if (computer == "rock") {
@@ -67,7 +65,7 @@ function game(choice) {
 
   }
 
-  //computerCard.flip(false);
+  computerCard.flip(true);
   console.log("Player score: ", playerScore);
   console.log("Comp score: ", compScore);
 }
@@ -78,8 +76,13 @@ playerCards.click(function() {
   game(this.id);
 });
 
+computerCard.click(function() {
+  computerCard.flip(false);
+});
+
 computerCard.flip({
   axis: 'y',
+  trigger: 'manual',
   reverse: true,
   speed: 500
 });
