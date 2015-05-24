@@ -76,10 +76,3 @@ function game(choice) {
 playerCards.click(function() {
   game(this.id);
 });
-
-$(document).ready(function() {
-  // Flips each of the player's cards.
-  for (var i = 0; i < playerCards.length; i++) {
-
-  }
-});
