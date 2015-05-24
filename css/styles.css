@@ -14,11 +14,11 @@ h1 {
   font-size: 3em;
 }
 
-#rock {
+#rock-word {
   font-weight: bold;
 }
 
-#paper {
+#paper-word {
   font-style: italic;
 }
 
@@ -48,7 +48,7 @@ h1 {
   background-color: black;
 }
 
-#rock-card:hover, #paper-card:hover, #scissors-card:hover {
+#rock:hover, #paper:hover, #scissors:hover {
   cursor: pointer;
 }
 
