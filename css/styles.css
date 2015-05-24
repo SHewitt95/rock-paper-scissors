@@ -48,6 +48,10 @@ h1 {
   background-color: black;
 }
 
+#rock-card:hover, #paper-card:hover, #scissors-card:hover {
+  cursor: pointer;
+}
+
 .card-with-caption {
   width: 25%;
   display: inline-block;
