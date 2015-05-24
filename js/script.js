@@ -6,6 +6,12 @@ var playerScore = 0,
 var playerCards = $(".player-card"),
     computerCard = $("#comp-card-whole");
 
+var rock = $(".fa-diamond").clone(),
+    paper = $(".fa-paper-plane").clone(),
+    scissors = $(".fa-scissors").clone();
+
+var backOfCard = $(".back");
+
 function game(choice) {
   // Houses main game functionality.
 
@@ -15,10 +21,13 @@ function game(choice) {
 
     if (choice <= 0.33) {
       choice = "rock";
+      backOfCard.append(rock);
     } else if (choice >= 0.66) {
       choice = "paper";
+      backOfCard.append(paper);
     } else {
       choice = "scissors";
+      backOfCard.append(scissors);
     }
 
     return choice;
@@ -70,19 +79,21 @@ function game(choice) {
   console.log("Comp score: ", compScore);
 }
 
-
-// Clicking on a card initiates the game.
-playerCards.click(function() {
-  game(this.id);
-});
-
-computerCard.click(function() {
+// Resets game to beginning state.
+function gameReset() {
   computerCard.flip(false);
-});
+  backOfCard.empty();
+}
 
 computerCard.flip({
   axis: 'y',
   trigger: 'manual',
   reverse: true,
   speed: 500
+});
+
+// Clicking on a card initiates the game.
+playerCards.click(function() {
+  game(this.id);
+  setTimeout(gameReset, 1500);
 });
