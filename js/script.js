@@ -3,7 +3,10 @@
 var playerScore = 0,
     compScore = 0;
 
+var playerCards = $(".player-card");
+
 function game(choice) {
+  // Houses main game functionality.
 
   function compChoice() {
     // Uses Math.random to pick rock, paper or scissors.
@@ -69,6 +72,14 @@ function game(choice) {
 }
 
 
-$(".player-card").click(function() {
+// Clicking on a card initiates the game.
+playerCards.click(function() {
   game(this.id);
+});
+
+$(document).ready(function() {
+  // Flips each of the player's cards.
+  for (var i = 0; i < playerCards.length; i++) {
+
+  }
 });
