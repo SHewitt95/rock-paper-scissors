@@ -24,37 +24,37 @@ var rock = $(".fa-diamond").clone(),
 // Variable containing where the icons will appear on the computer's card.
 var backOfCard = $(".back");
 
+// Uses Math.random to pick rock, paper or scissors.
+function compChoice() {
+  var computerChoice = Math.random();
+
+  if (computerChoice <= 0.33) {
+    computerChoice = "rock";
+    backOfCard.append(rock);
+  } else if (computerChoice >= 0.66) {
+    computerChoice = "paper";
+    backOfCard.append(paper);
+  } else {
+    computerChoice = "scissors";
+    backOfCard.append(scissors);
+  }
+
+  return computerChoice;
+}
+
+// Updates scores as game continues.
+function updateScore() {
+  // Empties score boxes of any current content.
+  playerScoreBox.empty();
+  compScoreBox.empty();
+
+  // Appends current scores to score boxes.
+  playerScoreBox.append(playerScore);
+  compScoreBox.append(compScore);
+}
+
 // Houses main game functionality.
 function game(playerChoice) {
-
-  // Uses Math.random to pick rock, paper or scissors.
-  function compChoice() {
-    var computerChoice = Math.random();
-
-    if (computerChoice <= 0.33) {
-      computerChoice = "rock";
-      backOfCard.append(rock);
-    } else if (computerChoice >= 0.66) {
-      computerChoice = "paper";
-      backOfCard.append(paper);
-    } else {
-      computerChoice = "scissors";
-      backOfCard.append(scissors);
-    }
-
-    return computerChoice;
-  }
-
-  // Updates scores as game continues.
-  function updateScore() {
-    // Empties score boxes of any current content.
-    playerScoreBox.empty();
-    compScoreBox.empty();
-
-    // Appends current scores to score boxes.
-    playerScoreBox.append(playerScore);
-    compScoreBox.append(compScore);
-  }
 
   var player = playerChoice;
   var computer = compChoice();
