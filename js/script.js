@@ -4,16 +4,24 @@
 Code for JQuery flip method found at http://nnattawat.github.io/flip/
 */
 
+// Variables containing the current scores.
 var playerScore = 0,
     compScore = 0;
 
+// Variables containing the DOM elements that will hold the current scores.
+var playerScoreBox = $("#player-score"),
+    compScoreBox = $("#comp-score");
+
+// Variables containing the player's and computer's cards.
 var playerCards = $(".player-card"),
     computerCard = $("#comp-card-whole");
 
+// Variables containing clones of the three icons that represent rock/paper/scissors.
 var rock = $(".fa-diamond").clone(),
     paper = $(".fa-paper-plane").clone(),
     scissors = $(".fa-scissors").clone();
 
+// Variable containing where the icons will appear on the computer's card.
 var backOfCard = $(".back");
 
 // Houses main game functionality.
@@ -35,6 +43,17 @@ function game(playerChoice) {
     }
 
     return computerChoice;
+  }
+
+  // Updates scores as game continues.
+  function updateScore() {
+    // Empties score boxes of any current content.
+    playerScoreBox.empty();
+    compScoreBox.empty();
+
+    // Appends current scores to score boxes.
+    playerScoreBox.append(playerScore);
+    compScoreBox.append(compScore);
   }
 
   var player = playerChoice;
@@ -79,8 +98,8 @@ function game(playerChoice) {
   }
 
   computerCard.flip(true);
-  console.log("Player score: ", playerScore);
-  console.log("Comp score: ", compScore);
+  updateScore();
+
 }
 
 // Resets game to beginning state.
