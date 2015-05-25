@@ -24,15 +24,27 @@ h1 {
 }
 
 .game-box {
-  width: 50%;
+  width: 65%;
   display: block;
   margin: 1em auto;
-  background-color: yellow;
+  background-color: #EDEDED; /* #EDEDED = color pulled from background. */
+  border: 1px solid black;
+  border-radius: 1em;
+}
+
+.row-container {
+  width: 95%;
+  display: block;
+  margin: 0em auto;
 }
 
 .row1, .row2 {
   width: 100%;
   padding: 0.5em;
+}
+
+.row1 {
+  border-bottom: 1px solid black;
 }
 
 .player-card-caption {
@@ -64,18 +76,6 @@ i {
 
 #rock, #paper, #scissors {
   background: white;
-}
-
-#rock {
-
-}
-
-#paper {
-
-}
-
-#scissors {
-
 }
 
 .card-with-caption {
@@ -116,20 +116,21 @@ i {
 }
 
 .score-box {
-  width: 48%;
+  width: 250px;
   height: 175px;
   display: inline-block;
   border: 5px solid black;
   background-color: white;
   position: relative;
-  bottom: 7em;
-  left: 3.25em;
+  bottom: 5.5em;
+  left: 3em;
 }
 
 .score p {
+  font-size: 1.5em;
   margin: 1em;
   padding: 0;
   display: block;
   position: relative;
-  top: 2em;
+  top: 1em;
 }
