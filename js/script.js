@@ -53,11 +53,25 @@ function updateScore() {
   compScoreBox.append(compScore);
 }
 
+// Alerts user of who won game. Refreshes page for next round.
+function declareWinner() {
+  // If the player won the game...
+  if (playerScore == 10) {
+    alert("You won!");
+  } else { // If the computer won the game...
+    alert("The computer won!");
+  }
+
+  // Refreshes window for next round.
+  window.location.reload();
+
+}
+
 // Houses main game functionality.
 function game(playerChoice) {
-
-  var player = playerChoice;
+  // Initializes the choices.
   var computer = compChoice();
+  var player = playerChoice;
 
   if (player == "rock") { // First part of "if" block...
 
@@ -99,6 +113,10 @@ function game(playerChoice) {
 
   computerCard.flip(true);
   updateScore();
+
+  if (compScore == 10 || playerScore == 10) {
+    declareWinner();
+  }
 
 }
 
