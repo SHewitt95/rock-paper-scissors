@@ -1,5 +1,9 @@
 "use strict";
 
+/*
+Code for JQuery flip method found at http://nnattawat.github.io/flip/
+*/
+
 var playerScore = 0,
     compScore = 0;
 
@@ -12,28 +16,28 @@ var rock = $(".fa-diamond").clone(),
 
 var backOfCard = $(".back");
 
-function game(choice) {
-  // Houses main game functionality.
+// Houses main game functionality.
+function game(playerChoice) {
 
+  // Uses Math.random to pick rock, paper or scissors.
   function compChoice() {
-    // Uses Math.random to pick rock, paper or scissors.
-    var choice = Math.random();
+    var computerChoice = Math.random();
 
-    if (choice <= 0.33) {
-      choice = "rock";
+    if (computerChoice <= 0.33) {
+      computerChoice = "rock";
       backOfCard.append(rock);
-    } else if (choice >= 0.66) {
-      choice = "paper";
+    } else if (computerChoice >= 0.66) {
+      computerChoice = "paper";
       backOfCard.append(paper);
     } else {
-      choice = "scissors";
+      computerChoice = "scissors";
       backOfCard.append(scissors);
     }
 
-    return choice;
+    return computerChoice;
   }
 
-  var player = choice;
+  var player = playerChoice;
   var computer = compChoice();
 
   if (player == "rock") { // First part of "if" block...
@@ -85,6 +89,7 @@ function gameReset() {
   backOfCard.empty();
 }
 
+// Initializes properties of the card flip.
 computerCard.flip({
   axis: 'y',
   trigger: 'manual',
@@ -95,5 +100,5 @@ computerCard.flip({
 // Clicking on a card initiates the game.
 playerCards.click(function() {
   game(this.id);
-  setTimeout(gameReset, 1500);
+  setTimeout(gameReset, 1150);
 });
