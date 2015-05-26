@@ -63,7 +63,11 @@ function declareWinner() {
   }
 
   // Refreshes window for next round.
-  window.location.reload();
+  // window.location.reload();
+
+  // Resets scores to zero.
+  playerScore = 0;
+  compScore = 0;
 
 }
 
